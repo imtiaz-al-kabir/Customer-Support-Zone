@@ -12,15 +12,17 @@ function App() {
   };
   const fetchPromise = fetchData();
   const [count, setCount] = useState(0);
+  const [ticket, setTicket] = useState([]);
 
   return (
     <>
       <Navbar />
-      <CountSection />
+      <CountSection ticket={ticket}  />
       <Suspense
         fallback={<span className="loading loading-spinner text-error"></span>}
       >
-        <Cards fetchPromise={fetchPromise} />
+        <Cards fetchPromise={fetchPromise}
+        ticket={ticket}setTicket={setTicket} />
       </Suspense>
 
       <Footer/>
