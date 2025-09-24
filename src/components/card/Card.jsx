@@ -5,7 +5,7 @@ const Card = ({ cardsData, handleTicket }) => {
   const { customer, priority, description, status, title, createdAt, id } =
     cardsData;
 
-  const [ticket, setTicket] = useState([]);
+//   const [ticket, setTicket] = useState([]);
   const handleTicket1 = () => {
     handleTicket(cardsData);
     // console.log("clicked",cardsData);
