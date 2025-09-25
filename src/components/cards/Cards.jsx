@@ -30,6 +30,7 @@ const Cards = ({
 
     setTicket((prev) => [...prev, cardsData]);
     setData((prev) => prev.filter((el) => el.id !== cardsData.id));
+
     // console.log("ticked clicked", cardsData);
   };
 

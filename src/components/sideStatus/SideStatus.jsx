@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const SideStatus = ({ tkt, handleFilterTicket }) => {
   // console.log(data);
   // console.log(tkt);
@@ -12,6 +14,16 @@ const SideStatus = ({ tkt, handleFilterTicket }) => {
         <button
           onClick={() => {
             handleFilterTicket(tkt.id);
+            toast.success(`${tkt.title} is added to resolve`, {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
           }}
           className="btn bg-green-500 text-white font-medium"
         >
