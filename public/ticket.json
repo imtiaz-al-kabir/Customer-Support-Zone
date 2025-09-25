@@ -31,7 +31,7 @@
     "title": "Incorrect Billing Address",
     "description": "Customer’s billing address shows a different city. They updated it but it still displays the old one.",
     "customer": "Emily Davis",
-    "priority": "LOW PRIORITY",
+    "priority": "LOW PRIORITY",
     "status": "Open",
     "createdAt": "2024-01-18"
   },
@@ -67,7 +67,7 @@
     "title": "Unable to Update Profile Picture",
     "description": "Customer tries to upload a new profile picture but gets 'Upload failed' error.",
     "customer": "Olivia Martinez",
-    "priority": "LOW PRIORITY",
+    "priority": "LOW PRIORITY",
     "status": "Open",
     "createdAt": "2024-01-22"
   },
@@ -94,7 +94,7 @@
     "title": "Delayed Shipping Notification",
     "description": "Customer complains they were not informed about delayed shipping of their product.",
     "customer": "William Harris",
-    "priority": "LOW PRIORITY",
+    "priority": "LOW PRIORITY",
     "status": "Open",
     "createdAt": "2024-01-23"
   },

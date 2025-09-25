@@ -1,10 +1,12 @@
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { IoLogoInstagram } from "react-icons/io";
 const Footer = () => {
   return (
     <div className="bg-black text-white py-5">
       <div className="flex justify-center items-center">
         {/* <img src={footerImg} alt="" /> */}
       </div>
-      <footer className="footer sm:footer-horizontal  flex flex-col justify-center sm:flex-row sm:justify-between px-5  sm:text-lg border-b-1 border-gray-300 container mx-auto">
+      <footer className="footer sm:footer-horizontal  flex flex-col justify-center sm:flex-row sm:justify-between px-5  sm:text-lg border-b-1 border-gray-300 container mx-auto py-3">
         <nav>
           <h1 className="footer-title">CS — Ticket System</h1>
           <p>
@@ -33,10 +35,18 @@ const Footer = () => {
         </nav>
         <nav>
           <h1 className="footer-title">Social Links</h1>
-          <a className="link link-hover">Home</a>
-          <a className="link link-hover">Services</a>
-          <a className="link link-hover">About</a>
-          <a className="link link-hover">Contact</a>
+          <a className="link link-hover">
+            <FaFacebook />
+          </a>
+          <a className="link link-hover">
+            <IoLogoInstagram />
+          </a>
+          <a className="link link-hover">
+            <FaGithub />
+          </a>
+          <a className="link link-hover">
+            <FaLinkedin />
+          </a>
         </nav>
       </footer>
       <div className="py-5 text-xl text-center">
