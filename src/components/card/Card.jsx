@@ -1,19 +1,17 @@
-import { useState } from "react";
 import calender from "../../assets/calendar.png";
 
 const Card = ({ cardsData, handleTicket }) => {
   const { customer, priority, description, status, title, createdAt, id } =
     cardsData;
-
-//   const [ticket, setTicket] = useState([]);
   const handleTicket1 = () => {
+    // toast("added");
     handleTicket(cardsData);
     // console.log("clicked",cardsData);
   };
   return (
     <div
       onClick={handleTicket1}
-      className="card  bg-base-100 card-md shadow-sm"
+      className="card  bg-base-100 card-md shadow-sm cursor-pointer"
     >
       <div className="card-body">
         <div className="flex justify-between items-center">

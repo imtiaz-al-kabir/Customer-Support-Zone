@@ -11,7 +11,6 @@ const SideStatus = ({ tkt, handleFilterTicket }) => {
 
         <button
           onClick={() => {
-            
             handleFilterTicket(tkt.id);
           }}
           className="btn bg-green-500 text-white font-medium"

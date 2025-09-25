@@ -1,20 +1,52 @@
 import { use, useState } from "react";
+import { toast } from "react-toastify";
 import Card from "../card/Card";
+import Resolve from "../resolve/resolve";
 import SideStatus from "../sideStatus/SideStatus";
-
-const Cards = ({ fetchPromise, ticket, setTicket, handleFilterTicket }) => {
+const Cards = ({
+  fetchPromise,
+  ticket,
+  setTicket,
+  handleFilterTicket,
+  resolved,
+  setResolved,
+}) => {
   const initialData = use(fetchPromise);
   // const [ticket, setTicket] = useState([]);
+
   const [data, setData] = useState(initialData);
   const handleTicket = (cardsData) => {
     // const newTicket = [...ticket, cardsData];
+    toast.success(`${cardsData.title} is added`, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
     setTicket((prev) => [...prev, cardsData]);
     setData((prev) => prev.filter((el) => el.id !== cardsData.id));
     // console.log("ticked clicked", cardsData);
   };
+
+  handleFilterTicket = (id) => {
+    const completed = ticket.find((el) => el.id === id);
+    setTicket(ticket.filter((el) => el.id !== id));
+    if (completed) {
+      setResolved((prev) => [...prev, completed]);
+    }
+  };
+
+  const handleResolve = (id) => {
+    setResolved(resolved.filter((el) => el.id !== id));
+  };
   // console.log(data);
   return (
-    <div className="bg-[#f5f5f5] py-10">
+    <div className="bg-[#f5f5f5] py-7">
       <div className="container mx-auto">
         <div className="px-5 py-5 font-semibold text-2xl">
           <h1>Customer Tickets</h1>
@@ -30,7 +62,7 @@ const Cards = ({ fetchPromise, ticket, setTicket, handleFilterTicket }) => {
             ))}
           </div>
           <div className="w-full sm:col-span-3 space-y-5">
-            <h1 className="font-bold pb-4 text-xl">Task Status</h1>
+            <h1 className="font-bold  text-xl">Task Status</h1>
             {ticket.map((tkt, ind) => (
               <SideStatus
                 handleFilterTicket={handleFilterTicket}
@@ -38,27 +70,18 @@ const Cards = ({ fetchPromise, ticket, setTicket, handleFilterTicket }) => {
                 tkt={tkt}
               />
             ))}
-
-            <h1>Resolved Task</h1>
-
-              <div className="card  bg-base-100 card-sm shadow-sm ">
-      <div className="card-body">
-        <h2 className="card-title">{}</h2>
-
-        <button
-          onClick={() => {
-            
-            handleFilterTicket(tkt.id);
-          }}
-          className="btn bg-green-500 text-white font-medium"
-        >
-          Complete
-        </button>
-      </div>
-    </div>
+            <h1 className="font-bold  text-xl">Resolved Task</h1>
+            {resolved.map((el, ind) => (
+              <Resolve
+                key={ind}
+                el={el}
+                handleResolve={() => handleResolve(el.id)}
+              />
+            ))}
           </div>
         </div>
       </div>
+      {/* <ToastContainer position="top-right" autoClose={2000} /> */}
     </div>
   );
 };
