@@ -17,7 +17,7 @@ const Cards = ({
   const [data, setData] = useState(initialData);
   const handleTicket = (cardsData) => {
     // const newTicket = [...ticket, cardsData];
-    toast.success(`${cardsData.title} is added`, {
+    toast.success(`${cardsData.title} is In Progress`, {
       position: "top-center",
       autoClose: 3000,
       hideProgressBar: false,
@@ -29,12 +29,12 @@ const Cards = ({
     });
 
     setTicket((prev) => [...prev, cardsData]);
-    setData((prev) => prev.filter((el) => el.id !== cardsData.id));
 
     // console.log("ticked clicked", cardsData);
   };
 
   handleFilterTicket = (id) => {
+    setData((prev) => prev.filter((el) => el.id !== id));
     const completed = ticket.find((el) => el.id === id);
     setTicket(ticket.filter((el) => el.id !== id));
     if (completed) {
