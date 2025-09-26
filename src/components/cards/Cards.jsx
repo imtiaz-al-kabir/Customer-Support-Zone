@@ -52,8 +52,8 @@ const Cards = ({
         <div className="px-5 py-5 font-semibold text-2xl">
           <h1>Customer Tickets</h1>
         </div>
-        <div className="grid sm:grid-cols-12 gap-5 px-4">
-          <div className="sm:col-span-9 grid sm:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-12 gap-5 px-4 items-start">
+          <div className="sm:col-span-9 grid sm:grid-cols-2 gap-4 auto-rows-fr">
             {data.map((cardsData) => (
               <Card
                 key={cardsData.id}

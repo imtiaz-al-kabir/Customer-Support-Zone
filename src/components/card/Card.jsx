@@ -39,7 +39,9 @@ const Card = ({ cardsData, handleTicket }) => {
             </div>
           </div>
         </div>
+
         <p>{description}</p>
+
         <div className="flex justify-between">
           <div className="flex gap-1 sm:gap-5">
             <h1> #{id}</h1>
