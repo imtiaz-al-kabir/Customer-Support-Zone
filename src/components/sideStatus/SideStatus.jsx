@@ -14,7 +14,7 @@ const SideStatus = ({ tkt, handleFilterTicket }) => {
         <button
           onClick={() => {
             handleFilterTicket(tkt.id);
-            toast.success(`${tkt.title} is added to resolve`, {
+            toast.success(`${tkt.title} is moved to resolve`, {
               position: "top-center",
               autoClose: 3000,
               hideProgressBar: false,

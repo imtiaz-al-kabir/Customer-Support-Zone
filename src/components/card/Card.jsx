@@ -11,7 +11,7 @@ const Card = ({ cardsData, handleTicket }) => {
   return (
     <div
       onClick={handleTicket1}
-      className="card  bg-base-100 card-md shadow-sm cursor-pointer"
+      className="card  bg-base-100  card-md shadow-sm cursor-pointer"
     >
       <div className="card-body">
         <div className="flex justify-between items-center">

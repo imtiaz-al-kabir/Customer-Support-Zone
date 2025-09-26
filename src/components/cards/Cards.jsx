@@ -64,21 +64,32 @@ const Cards = ({
           </div>
           <div className="w-full sm:col-span-3 space-y-5">
             <h1 className="font-bold  text-xl">Task Status</h1>
-            {ticket.map((tkt, ind) => (
-              <SideStatus
-                handleFilterTicket={handleFilterTicket}
-                key={ind}
-                tkt={tkt}
-              />
-            ))}
+            {ticket.length > 0 ? (
+              ticket.map((tkt, ind) => (
+                <SideStatus
+                  handleFilterTicket={handleFilterTicket}
+                  key={ind}
+                  tkt={tkt}
+                />
+              ))
+            ) : (
+              <p className="text-[#627382]">
+                Select a ticket to add to Task Status
+              </p>
+            )}
+
             <h1 className="font-bold  text-xl">Resolved Task</h1>
-            {resolved.map((el, ind) => (
-              <Resolve
-                key={ind}
-                el={el}
-                handleResolve={() => handleResolve(el.id)}
-              />
-            ))}
+            {resolved.length > 0 ? (
+              resolved.map((el, ind) => (
+                <Resolve
+                  key={ind}
+                  el={el}
+                  handleResolve={() => handleResolve(el.id)}
+                />
+              ))
+            ) : (
+              <p className="text-[#627382]">No resolved tasks yet.</p>
+            )}
           </div>
         </div>
       </div>
