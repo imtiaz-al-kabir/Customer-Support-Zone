@@ -1,6 +1,4 @@
 const Resolve = ({ el, handleResolve }) => {
-
-
   return (
     <div
       onClick={handleResolve}
